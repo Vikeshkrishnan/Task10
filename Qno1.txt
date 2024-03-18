@@ -1,0 +1,30 @@
+public class Person {
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter method for name attribute
+    public String getName() {
+        return this.name;
+    }
+
+    // Getter method for age attribute
+    public int getAge() {
+        return this.age;
+    }
+
+    public static void main(String[] args) {
+        // Example usage:
+        // Creating a new Person object
+        Person person1 = new Person("Vikesh", 24);
+
+        // Using getter methods to access attributes
+        System.out.println("Name: " + person1.getName());
+        System.out.println("Age: " + person1.getAge());
+    }
+}

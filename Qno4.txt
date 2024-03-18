@@ -1,0 +1,60 @@
+public class Account {
+    // Data member
+    private double balance;
+
+    // Constructors
+    public Account() {
+        this.balance = 0.0;
+    }
+
+    public Account(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    // Method to withdraw balance
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. Remaining balance: " + balance);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient balance.");
+        }
+    }
+
+    // Method to deposit balance
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful. New balance: " + balance);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        // Create an account with no initial balance
+        Account account1 = new Account();
+        System.out.println("Account 1 balance: " + account1.getBalance());
+
+        // Deposit to account1
+        account1.deposit(300.0);
+
+        // Withdraw from account1
+        account1.withdraw(60.0);
+
+        // Create an account with initial balance
+        Account account2 = new Account(700.0);
+        System.out.println("Account 2 balance: " + account2.getBalance());
+
+        // Deposit to account2
+        account2.deposit(900.0);
+
+        // Withdraw from account2
+        account2.withdraw(400.0);
+    }
+}
